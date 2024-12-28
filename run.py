@@ -22,9 +22,9 @@ async def run():
 
     properties_data = await realestate.scrape_properties(
         urls=[
-            "https://www.realestate.com.au/property-house-vic-tarneit-143160680",
-            "https://www.realestate.com.au/property-house-vic-bundoora-141557712",
-            "https://www.realestate.com.au/property-townhouse-vic-glenroy-143556608",
+            "https://www.realestate.com.au/property-house-vic-eaglemont-146584336",
+            "https://www.realestate.com.au/property-house-vic-eaglemont-145607856",
+            "https://www.realestate.com.au/property-house-vic-viewbank-146895688",
         ]
     )
     with open(output.joinpath("properties.json"), "w", encoding="utf-8") as file:
@@ -32,7 +32,7 @@ async def run():
 
     search_data = await realestate.scrape_search(
         # you can change "buy" to "rent" in the search URL to search for properties for rent
-        url="https://www.realestate.com.au/buy/in-melbourne+-+northern+region,+vic/list-1",
+        url="https://www.realestate.com.au/buy/property-house-with-2-bedrooms-size-600-5000-between-900000-any-in-eaglemont,+vic+3084/list-1?numParkingSpaces=1&numBaths=1&newOrEstablished=established&activeSort=list-date&sourcePage=rea:buy:srp-map&sourceElement=tab-headers",
         max_scrape_pages=3,
     )
     with open(output.joinpath("search.json"), "w", encoding="utf-8") as file:
